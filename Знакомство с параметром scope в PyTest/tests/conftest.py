@@ -1,6 +1,7 @@
 import pytest
 
-@pytest.fixture(scope='module')
+# Фикстура на весь модуль
+@pytest.fixture(scope='module', autouse=True)
 def message_module():
     print("Это демонстрационная работа фикстуры модуля.")
     yield
@@ -14,5 +15,3 @@ def data():
     print(f'Тестовый список {test_list}')
     yield test_list
     print('Расчет выполнен')
-
-
